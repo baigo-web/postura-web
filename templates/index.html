@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detector de Postura</title>
+</head>
+<body>
+    <h1>Sube una imagen</h1>
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Analizar</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Resultados:</h2>
+        <p>Buena postura: {{ prediction.buena }}%</p>
+        <p>Mala postura: {{ prediction.mala }}%</p>
+    {% endif %}
+</body>
+</html>
